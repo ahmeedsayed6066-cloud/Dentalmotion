@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="description" content="Premium dental motion graphics by Dr. Ahmed — a practicing dentist and motion director. 500+ videos, 50+ clinics globally."/>
+<title>Dr. Ahmed | Dental Motion Graphics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+
+<style>
+/* ─────────────────────────────────────
+   RESET & BASE
+───────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:#0a0a0a;
+  color:#f0ede6;
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:#0a0a0a}
+::-webkit-scrollbar-thumb{background:#c9a020}
+
+/* ─────────────────────────────────────
+   DESIGN TOKENS
+───────────────────────────────────── */
+:root{
+  /* Gold */
+  --gold:#FFC30B;
+  --gold-dark:#d4a008;
+  --gold-dim:rgba(255,195,11,0.13);
+  --gold-border:rgba(255,195,11,0.22);
+  --gold-glow:rgba(255,195,11,0.07);
+
+  /* Blacks */
+  --black:#0a0a0a;
+  --black2:#0e0e0e;
+  --black3:#131313;
+  --black4:#181818;
+  --black5:#1e1e1e;
+  --charcoal:#242424;
+
+  /* Creams */
+  --cream:#f0ede6;
+  --cream80:rgba(240,237,230,0.8);
+  --cream55:rgba(240,237,230,0.55);
+  --cream35:rgba(240,237,230,0.35);
+  --cream15:rgba(240,237,230,0.15);
+  --cream08:rgba(240,237,230,0.08);
+
+  /* WA green */
+  --wa:#25d366;
+  --wa-dark:#1aad52;
+}
+
+/* ─────────────────────────────────────
+   LAYOUT
+───────────────────────────────────── */
+.container{width:100%;max-width:1060px;margin:0 auto;padding:0 18px}
+@media(min-width:768px){.container{padding:0 44px}}
+
+/* ─────────────────────────────────────
+   GRAIN TEXTURE
+───────────────────────────────────── */
+body::after{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9900;opacity:.45;
+}
+
+/* ─────────────────────────────────────
+   TYPOGRAPHY HELPERS
+───────────────────────────────────── */
+.gold{color:var(--gold)}
+.serif{font-family:'Playfair Display',serif}
+.mono{font-family:'Space Mono',monospace}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:'Space Mono',monospace;
+  font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);opacity:.82;margin-bottom:16px;
+}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);opacity:.7}
+
+/* ─────────────────────────────────────
+   BUTTONS
+───────────────────────────────────── */
+/* WhatsApp — primary action everywhere */
+.btn-wa{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(135deg,#25d366,#1aad52);
+  color:#fff;
+  font-family:'Inter',sans-serif;
+  font-size:15px;font-weight:800;letter-spacing:.04em;
+  padding:16px 32px;border-radius:4px;
+  box-shadow:0 6px 28px rgba(37,211,102,0.35);
+  transition:transform .2s,box-shadow .25s,filter .2s;
+  position:relative;overflow:hidden;
+  white-space:nowrap;width:100%;
+  border:none;cursor:pointer;
+}
+.btn-wa::before{
+  content:'';position:absolute;
+  top:-50%;left:-60%;width:32%;height:200%;
+  background:rgba(255,255,255,0.15);
+  transform:skewX(-20deg);
+  transition:left .5s ease;
+}
+.btn-wa:hover::before{left:130%}
+.btn-wa:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 44px rgba(37,211,102,0.45);
+  filter:brightness(1.05);
+}
+@media(min-width:480px){.btn-wa{width:auto}}
+
+/* Gold outlined secondary */
+.btn-outline{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:1.5px solid var(--gold-border);border-radius:4px;
+  padding:14px 24px;
+  font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--cream55);
+  transition:border-color .25s,color .25s,background .25s;
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
+
+/* ─────────────────────────────────────
+   SCROLL REVEAL
+───────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .68s ease,transform .68s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PROMO BAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#bar{
+  position:sticky;top:0;z-index:8000;
+  background:rgba(10,10,10,0.97);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--gold-border);
+  padding:9px 16px;
+}
+.bar-inner{
+  display:flex;flex-wrap:wrap;align-items:center;
+  justify-content:center;gap:7px 14px;text-align:center;
+}
+.bar-text{font-size:11.5px;font-weight:600;color:var(--cream55);letter-spacing:.02em}
+.bar-text b{color:var(--gold);font-weight:800}
+/* Countdown */
+.cd{display:flex;align-items:center;gap:3px}
+.cd-u{text-align:center}
+.cd-n{
+  font-family:'Space Mono',monospace;font-size:13px;font-weight:700;
+  color:var(--gold);background:var(--gold-dim);border:1px solid var(--gold-border);
+  border-radius:3px;padding:2px 7px;min-width:32px;display:block;line-height:1.5;
+}
+.cd-l{font-size:8.5px;color:rgba(255,195,11,0.42);letter-spacing:.1em;text-transform:uppercase;margin-top:2px;font-family:'Space Mono',monospace}
+.cd-sep{color:rgba(255,195,11,0.3);font-size:14px;font-family:'Space Mono',monospace;padding-bottom:11px}
+.bar-btn{
+  font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:#0a0a0a;background:var(--gold);border-radius:2px;padding:5px 13px;
+  white-space:nowrap;flex-shrink:0;transition:background .2s;
+}
+.bar-btn:hover{background:#ffd340}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HERO — showreel-first, above-fold
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#hero{
+  background:var(--black);
+  position:relative;overflow:hidden;
+  /* tight padding — everything must fit above fold on mobile */
+  padding:28px 0 36px;
+}
+/* Ambient glow */
+.hero-glow{
+  position:absolute;bottom:-10%;left:50%;transform:translateX(-50%);
+  width:min(700px,130vw);height:min(500px,70vh);border-radius:50%;
+  background:radial-gradient(ellipse at center bottom,
+    rgba(255,195,11,0.09) 0%,rgba(200,150,0,0.04) 35%,transparent 65%);
+  pointer-events:none;
+}
+/* Fine grid lines */
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,195,11,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,195,11,0.04) 1px,transparent 1px);
+  background-size:70px 70px;
+  mask-image:radial-gradient(ellipse 85% 85% at 50% 40%,black 20%,transparent 100%);
+  pointer-events:none;
+}
+
+.hero-inner{position:relative;z-index:2}
+
+/* Eyebrow */
+.hero-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'Space Mono',monospace;font-size:10px;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.8;
+  margin-bottom:14px;
+}
+.hero-tag span{display:inline-block;width:18px;height:1px;background:var(--gold);opacity:.6}
+
+/* Headline */
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,7.5vw,56px);
+  font-weight:900;line-height:1.05;letter-spacing:-.02em;
+  margin-bottom:12px;
+}
+.hero-h1 .w{color:var(--cream)}
+.hero-h1 .g{color:var(--gold)}
+
+/* Sub tags */
+.hero-subs{
+  display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  margin-bottom:18px;
+}
+.hero-sub-item{
+  font-family:'Space Mono',monospace;
+  font-size:10.5px;font-weight:700;letter-spacing:.06em;
+  color:var(--cream55);
+}
+.hero-sub-dot{color:rgba(255,195,11,0.3);font-size:13px}
+
+/* 16:9 Video Player */
+.video-wrap{
+  width:100%;aspect-ratio:16/9;
+  background:var(--black3);
+  border:1px solid rgba(255,195,11,0.18);
+  border-radius:8px;overflow:hidden;
+  position:relative;cursor:pointer;
+  margin-bottom:16px;
+  box-shadow:0 8px 40px rgba(0,0,0,.7),0 0 0 0 rgba(255,195,11,0);
+  transition:box-shadow .3s,border-color .3s;
+}
+.video-wrap:hover{
+  border-color:rgba(255,195,11,0.4);
+  box-shadow:0 12px 60px rgba(0,0,0,.8),0 0 40px rgba(255,195,11,0.1);
+}
+/* Gradient overlay on thumbnail */
+.vw-overlay{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%,rgba(255,195,11,0.04) 0%,transparent 70%),
+    linear-gradient(to bottom,rgba(10,10,10,0.2) 0%,rgba(10,10,10,0.55) 100%);
+}
+/* Animated dental-ish background shapes */
+.vw-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,#0c0a02 0%,#160f00 40%,#0a0a0a 100%);
+}
+.vw-lines{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,195,11,0.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,195,11,0.06) 1px,transparent 1px);
+  background-size:40px 40px;
+  opacity:.5;
+}
+.vw-shapes{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:20px;
+  opacity:.07;
+}
+/* Gold play button */
+.vw-play{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:clamp(52px,10vw,72px);height:clamp(52px,10vw,72px);
+  border-radius:50%;
+  background:rgba(255,195,11,0.15);
+  border:2px solid rgba(255,195,11,0.65);
+  display:flex;align-items:center;justify-content:center;
+  z-index:3;
+  transition:background .3s,transform .3s,box-shadow .3s;
+}
+.video-wrap:hover .vw-play{
+  background:rgba(255,195,11,0.28);
+  transform:translate(-50%,-50%) scale(1.1);
+  box-shadow:0 0 40px rgba(255,195,11,0.45);
+}
+/* Pulse ring */
+.vw-play::before{
+  content:'';position:absolute;
+  width:calc(100% + 20px);height:calc(100% + 20px);
+  border-radius:50%;border:1px solid rgba(255,195,11,0.25);
+  animation:pulse-ring 2.4s ease-in-out infinite;
+}
+.vw-play::after{
+  content:'';position:absolute;
+  width:calc(100% + 40px);height:calc(100% + 40px);
+  border-radius:50%;border:1px solid rgba(255,195,11,0.12);
+  animation:pulse-ring 2.4s ease-in-out infinite .5s;
+}
+@keyframes pulse-ring{
+  0%,100%{transform:scale(1);opacity:.6}
+  50%{transform:scale(1.08);opacity:1}
+}
+/* Duration badge */
+.vw-badge{
+  position:absolute;bottom:12px;right:12px;z-index:3;
+  background:rgba(10,10,10,0.85);backdrop-filter:blur(8px);
+  border:1px solid var(--gold-border);border-radius:4px;
+  padding:5px 10px;
+  display:flex;align-items:center;gap:6px;
+}
+.vw-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 1.8s ease-in-out infinite}
+.vw-badge-txt{font-family:'Space Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.08em}
+/* Title bar */
+.vw-title{
+  position:absolute;bottom:0;left:0;right:0;z-index:3;
+  padding:32px 16px 14px;
+  background:linear-gradient(to top,rgba(10,10,10,0.92),transparent);
+}
+.vw-title-txt{font-size:14px;font-weight:700;color:var(--cream)}
+.vw-title-sub{font-family:'Space Mono',monospace;font-size:10px;color:var(--gold);opacity:.7;margin-top:3px;letter-spacing:.06em}
+
+/* Metrics row */
+.hero-metrics{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:10px;margin-top:14px;
+}
+.hmetric{
+  background:var(--cream08);
+  border:1px solid rgba(240,237,230,0.09);
+  border-radius:4px;padding:10px 14px;text-align:center;
+}
+.hmetric-n{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(22px,5vw,28px);font-weight:700;color:var(--gold);line-height:1;
+}
+.hmetric-l{
+  font-family:'Space Mono',monospace;
+  font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--cream35);margin-top:4px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TRUSTED BY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#trusted-by{
+  background:var(--black);
+  padding:30px 0 38px;
+  position:relative;overflow:hidden;
+}
+.tb-glow{
+  position:absolute;bottom:-15%;left:50%;transform:translateX(-50%);
+  width:min(700px,130vw);height:320px;border-radius:50%;
+  background:radial-gradient(ellipse at center bottom,
+    rgba(255,195,11,0.11) 0%,rgba(180,130,0,0.04) 40%,transparent 68%);
+  pointer-events:none;
+}
+.tb-inner{position:relative;z-index:2;text-align:center}
+.tb-label{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(22px,5vw,34px);font-weight:800;
+  color:#fff;letter-spacing:-.02em;margin-bottom:24px;
+}
+.tb-avatars{
+  display:flex;align-items:center;
+  justify-content:center;gap:0;
+}
+/* wrapper — controls overlap & hover */
+.tb-av{
+  position:relative;flex-shrink:0;
+  margin-left:-14px;z-index:1;
+  cursor:pointer;
+  transition:transform .3s ease;
+}
+.tb-av:first-child{margin-left:0}
+.tb-av:hover{transform:scale(1.12) translateY(-6px);z-index:10}
+/* the visible circle */
+.tb-circle{
+  width:68px;height:68px;          /* fixed px — no clamp so images stay small */
+  border-radius:50%;
+  border:3px solid #0a0a0a;        /* dark gap */
+  overflow:hidden;
+  background:#181818;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;
+  color:rgba(255,195,11,0.4);
+  position:relative;
+}
+.tb-circle img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  border-radius:50%;
+  display:block;
+}
+/* country flag badge */
+.tb-flag{
+  position:absolute;bottom:-2px;right:-2px;
+  width:22px;height:22px;border-radius:50%;
+  background:#0a0a0a;
+  border:2px solid #0a0a0a;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;line-height:1;
+  z-index:2;
+}
+/* featured center */
+.tb-av.featured{z-index:5}
+.tb-av.featured:hover{z-index:11}
+.tb-av.featured .tb-circle{
+  width:84px;height:84px;
+  border:3px solid var(--gold);
+  box-shadow:
+    0 0 0 3px rgba(255,195,11,0.14),
+    0 0 22px rgba(255,195,11,0.55),
+    0 0 50px rgba(255,195,11,0.2);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FLAG ROW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#flags{
+  background:var(--black2);
+  border-top:1px solid rgba(255,195,11,0.08);
+  border-bottom:1px solid rgba(255,195,11,0.08);
+  padding:18px 0;
+  overflow:hidden;
+}
+.flags-scroll{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:7px;padding:0 18px;
+}
+.flag-tag{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--cream08);
+  border:1px solid rgba(255,195,11,0.1);
+  border-radius:20px;padding:5px 12px;
+  font-size:11px;font-weight:600;color:var(--cream55);letter-spacing:.02em;
+  transition:border-color .25s,color .25s,background .25s;
+  white-space:nowrap;
+}
+.flag-tag:hover{border-color:var(--gold-border);color:var(--gold);background:var(--gold-glow)}
+.flag-tag .f{font-size:14px}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   WHY A DENTIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#doctor{
+  background:var(--black2);
+  padding:80px 0;position:relative;overflow:hidden;
+}
+.doc-glow{
+  position:absolute;left:-100px;top:50%;transform:translateY(-50%);
+  width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,195,11,0.04),transparent 70%);
+  pointer-events:none;
+}
+.doc-grid{
+  display:grid;grid-template-columns:1fr;gap:48px;align-items:center;
+}
+@media(min-width:768px){.doc-grid{grid-template-columns:auto 1fr;gap:72px}}
+
+/* Circle avatar */
+.circle-outer{position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.circle-r1{
+  position:absolute;
+  width:calc(var(--csize) + 28px);height:calc(var(--csize) + 28px);
+  border-radius:50%;border:1px solid rgba(255,195,11,0.12);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
+}
+.circle-r2{
+  position:absolute;
+  width:calc(var(--csize) + 52px);height:calc(var(--csize) + 52px);
+  border-radius:50%;border:1px solid rgba(255,195,11,0.06);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
+}
+.circle-av{
+  --csize:clamp(200px,38vw,260px);
+  width:var(--csize);height:var(--csize);
+  border-radius:50%;
+  background:var(--black4);
+  border:2.5px solid var(--gold-border);
+  overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 5px rgba(255,195,11,0.05),0 0 60px rgba(255,195,11,0.07),0 28px 70px rgba(0,0,0,.6);
+  transition:box-shadow .4s;
+}
+.circle-av:hover{
+  box-shadow:0 0 0 5px rgba(255,195,11,0.1),0 0 80px rgba(255,195,11,0.16),0 28px 70px rgba(0,0,0,.6);
+}
+.circle-av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.circle-ph{color:rgba(255,255,255,0.06)}
+.circle-nameplate{
+  position:absolute;bottom:0;left:0;right:0;text-align:center;
+  padding:24px 12px 14px;
+  background:linear-gradient(to top,rgba(10,10,10,.95),transparent);
+}
+.circle-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--cream)}
+.circle-role{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+
+/* Right copy */
+.doc-h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,5vw,50px);font-weight:900;
+  line-height:1.06;letter-spacing:-.02em;margin-bottom:14px;
+}
+.doc-h2 .g{color:var(--gold);font-style:italic}
+.doc-divider{width:44px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:20px;opacity:.6}
+.doc-p{
+  font-size:clamp(14px,1.6vw,15.5px);font-weight:400;line-height:1.85;
+  color:var(--cream55);margin-bottom:15px;
+}
+.doc-p strong{color:var(--cream80);font-weight:700}
+.doc-p em{color:var(--gold);font-style:normal;font-weight:600}
+
+.doc-feats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:24px}
+@media(max-width:380px){.doc-feats{grid-template-columns:1fr}}
+.dfeat{
+  background:var(--gold-glow);border:1px solid var(--gold-border);
+  border-radius:4px;padding:12px 13px;
+  display:flex;align-items:flex-start;gap:9px;
+}
+.dfeat-icon{
+  width:18px;height:18px;border-radius:50%;flex-shrink:0;
+  background:var(--gold-dim);border:1px solid rgba(255,195,11,0.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;color:var(--gold);margin-top:1px;
+}
+.dfeat-title{font-size:12px;font-weight:700;color:var(--cream);line-height:1.3}
+.dfeat-sub{font-size:11px;color:var(--cream35);margin-top:2px;line-height:1.3}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PORTFOLIO — 9:16 swipeable
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#portfolio{
+  background:var(--black3);padding:80px 0;
+  position:relative;overflow:hidden;
+}
+.port-bg-word{
+  position:absolute;right:-10px;top:50%;transform:translateY(-50%);
+  font-family:'Playfair Display',serif;
+  font-size:clamp(90px,13vw,160px);font-weight:900;font-style:italic;
+  color:rgba(255,195,11,0.02);line-height:1;
+  pointer-events:none;user-select:none;
+}
+.port-header{
+  display:flex;flex-wrap:wrap;align-items:flex-end;
+  justify-content:space-between;gap:12px;margin-bottom:16px;
+}
+.port-h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,5vw,52px);font-weight:900;
+  letter-spacing:-.02em;line-height:1.05;
+}
+.port-h2 .g{color:var(--gold);font-style:italic}
+.port-more{
+  font-family:'Space Mono',monospace;font-size:10px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.65;
+  border-bottom:1px solid rgba(255,195,11,0.28);padding-bottom:2px;
+  transition:opacity .2s;white-space:nowrap;
+}
+.port-more:hover{opacity:1}
+
+/* Views badge */
+.views-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--gold-dim);
+  border:1px solid var(--gold-border);
+  border-radius:4px;padding:9px 16px;
+  margin-bottom:28px;
+}
+.vb-icon{font-size:16px}
+.vb-txt{font-size:12.5px;font-weight:700;color:var(--gold);line-height:1.3}
+.vb-txt span{color:var(--cream55);font-weight:500}
+
+/* Scrollable reel row */
+.reel-row-wrap{position:relative}
+.reel-row{
+  display:flex;gap:14px;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  padding-bottom:10px;padding-left:2px;padding-right:2px;
+  scrollbar-width:none;
+  cursor:grab;
+}
+.reel-row:active{cursor:grabbing}
+.reel-row::-webkit-scrollbar{display:none}
+@media(min-width:720px){
+  .reel-row{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    overflow:visible;scroll-snap-type:none;
+    padding:0;cursor:default;
+  }
+  .reel-row:active{cursor:default}
+}
+
+/* Nav arrows (mobile visual cue) */
+.reel-arrow{
+  display:none;position:absolute;top:50%;transform:translateY(-50%);
+  width:36px;height:36px;border-radius:50%;z-index:5;
+  background:rgba(10,10,10,0.8);border:1px solid var(--gold-border);
+  align-items:center;justify-content:center;cursor:pointer;
+  color:var(--gold);font-size:16px;
+  transition:background .2s,border-color .2s;
+}
+.reel-arrow:hover{background:var(--gold-dim);border-color:var(--gold)}
+.reel-arrow.left{left:-16px}
+.reel-arrow.right{right:-16px}
+@media(max-width:719px){.reel-arrow{display:flex}}
+
+/* 9:16 reel card */
+.reel-card{
+  position:relative;
+  flex:0 0 64vw;max-width:220px;
+  aspect-ratio:9/16;
+  background:var(--black4);
+  border:1px solid rgba(255,195,11,0.1);
+  border-radius:10px;overflow:hidden;cursor:pointer;
+  scroll-snap-align:start;
+  transition:transform .4s cubic-bezier(.25,.46,.45,.94),box-shadow .4s,border-color .3s;
+}
+@media(min-width:720px){.reel-card{flex:none;max-width:none;width:100%}}
+.reel-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 28px 70px rgba(0,0,0,.7),0 0 0 1px rgba(255,195,11,0.35);
+  border-color:rgba(255,195,11,0.32);
+}
+.rc-bg{position:absolute;inset:0;transition:transform .5s ease}
+.reel-card:hover .rc-bg{transform:scale(1.04)}
+.rc-pat{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.06}
+.rc-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,10,10,0.96) 0%,rgba(10,10,10,0.18) 55%,transparent 100%);
+  transition:background .3s;
+}
+.reel-card:hover .rc-overlay{background:linear-gradient(to top,rgba(10,10,10,0.98) 0%,rgba(255,195,11,0.04) 100%)}
+.rc-play{
+  position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);
+  width:46px;height:46px;border-radius:50%;
+  background:var(--gold-dim);border:1.5px solid rgba(255,195,11,0.55);
+  display:flex;align-items:center;justify-content:center;z-index:2;
+  transition:background .3s,transform .3s,box-shadow .3s;
+}
+.reel-card:hover .rc-play{
+  background:rgba(255,195,11,0.26);
+  transform:translate(-50%,-50%) scale(1.12);
+  box-shadow:0 0 28px rgba(255,195,11,0.42);
+}
+.rc-info{position:absolute;bottom:0;left:0;right:0;padding:16px;z-index:2}
+.rc-tag{
+  font-family:'Space Mono',monospace;font-size:8.5px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);background:var(--gold-dim);
+  border:1px solid var(--gold-border);
+  border-radius:2px;padding:3px 7px;display:inline-block;margin-bottom:7px;
+}
+.rc-title{font-size:13px;font-weight:800;color:var(--cream);line-height:1.3}
+.rc-sub{font-size:11px;color:var(--cream55);margin-top:5px;line-height:1.4}
+.rc-dur{font-family:'Space Mono',monospace;font-size:9px;color:var(--cream35);margin-top:5px}
+
+/* Swipe hint */
+.swipe-hint{
+  text-align:center;margin-top:12px;
+  font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--cream35);
+}
+@media(min-width:720px){.swipe-hint{display:none}}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TESTIMONIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#testimonials{
+  background:var(--black2);padding:80px 0;
+  position:relative;overflow:hidden;
+}
+.testi-glow{
+  position:absolute;right:-80px;top:50%;transform:translateY(-50%);
+  width:350px;height:350px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,195,11,0.04),transparent 70%);
+  pointer-events:none;
+}
+.testi-h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,5vw,48px);font-weight:900;
+  letter-spacing:-.02em;margin-bottom:8px;
+}
+.testi-h2 .g{color:var(--gold);font-style:italic}
+.testi-sub{
+  font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--cream35);margin-bottom:44px;
+}
+.testi-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:720px){.testi-grid{grid-template-columns:repeat(3,1fr)}}
+
+.tcard{
+  background:var(--black4);border:1px solid rgba(255,195,11,0.1);
+  border-radius:6px;padding:24px 20px;
+  display:flex;flex-direction:column;gap:16px;
+  position:relative;overflow:hidden;
+  transition:border-color .3s,box-shadow .3s,transform .3s;
+}
+.tcard:hover{
+  border-color:rgba(255,195,11,0.28);
+  box-shadow:0 18px 56px rgba(0,0,0,.5),0 0 36px rgba(255,195,11,0.05);
+  transform:translateY(-4px);
+}
+.tcard::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.45;
+}
+.tcard-stars{display:flex;gap:3px}
+.star{color:var(--gold);font-size:13px}
+.tcard-quote{
+  font-size:clamp(13px,1.5vw,14px);font-weight:400;line-height:1.82;
+  color:var(--cream80);flex:1;position:relative;padding-top:6px;
+}
+.tcard-quote::before{
+  content:'"';position:absolute;top:-14px;left:-3px;
+  font-family:'Playfair Display',serif;
+  font-size:60px;font-style:italic;font-weight:900;
+  color:rgba(255,195,11,0.1);line-height:1;pointer-events:none;
+}
+.tcard-author{display:flex;align-items:center;gap:11px}
+.tcard-av{
+  width:40px;height:40px;border-radius:50%;flex-shrink:0;
+  background:var(--black5);border:1.5px solid var(--gold-border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:15px;font-weight:700;
+  color:var(--gold);transition:border-color .3s;overflow:hidden;
+}
+.tcard-av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.tcard:hover .tcard-av{border-color:var(--gold)}
+.tcard-name{font-size:13px;font-weight:700;color:var(--cream)}
+.tcard-role{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.58;margin-top:3px}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FAQ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#faq{background:var(--black);padding:80px 0}
+.faq-layout{display:grid;grid-template-columns:1fr;gap:48px}
+@media(min-width:768px){.faq-layout{grid-template-columns:1fr 1.65fr;gap:72px;align-items:start}}
+.faq-lh{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,4.5vw,46px);font-weight:900;letter-spacing:-.02em;line-height:1.05;
+}
+.faq-lh .g{color:var(--gold);font-style:italic}
+.faq-lsub{font-size:14px;color:var(--cream55);margin-top:12px;line-height:1.75}
+.faq-lcta{margin-top:24px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid rgba(240,237,230,0.07)}
+.faq-item:first-child{border-top:1px solid rgba(240,237,230,0.07)}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:18px 0;cursor:pointer;
+}
+.fq-in{display:flex;align-items:center;gap:11px}
+.fq-num{font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,195,11,0.32);min-width:20px}
+.fq-txt{font-size:clamp(13.5px,1.7vw,15px);font-weight:700;color:var(--cream);transition:color .25s;line-height:1.35}
+.faq-q:hover .fq-txt{color:var(--gold)}
+.fq-icon{
+  width:26px;height:26px;border-radius:50%;flex-shrink:0;
+  border:1px solid var(--gold-border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold);font-size:18px;line-height:1;
+  transition:transform .35s cubic-bezier(.25,.46,.45,.94),background .25s;
+}
+.faq-item.open .fq-icon{transform:rotate(45deg);background:var(--gold-dim)}
+.faq-a{max-height:0;overflow:hidden;opacity:0;padding-left:31px;transition:max-height .4s cubic-bezier(.25,.46,.45,.94),opacity .3s,padding .3s}
+.faq-item.open .faq-a{max-height:280px;opacity:1;padding-bottom:18px}
+.faq-a p{font-size:14px;color:var(--cream55);line-height:1.82}
+.faq-a strong{color:var(--gold)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FINAL CTA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#finalcta{
+  background:var(--black2);padding:110px 0;
+  position:relative;overflow:hidden;
+  border-top:1px solid var(--gold-border);
+}
+.fcta-glow{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(255,195,11,0.06) 0%,transparent 65%);
+  pointer-events:none;
+}
+.fcta-word{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:'Playfair Display',serif;
+  font-size:clamp(80px,18vw,200px);font-weight:900;font-style:italic;
+  color:rgba(255,195,11,0.025);white-space:nowrap;
+  pointer-events:none;user-select:none;line-height:1;
+}
+.fcta-inner{position:relative;z-index:2;text-align:center}
+.fcta-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--gold-dim);border:1px solid var(--gold-border);
+  border-radius:30px;padding:7px 17px;margin-bottom:26px;
+}
+.fcta-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 1.8s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:.4}50%{opacity:1}}
+.fcta-badge-txt{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
+.fcta-h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,6.5vw,70px);font-weight:900;
+  line-height:.98;letter-spacing:-.02em;margin-bottom:16px;
+}
+.fcta-h2 .g{color:var(--gold);font-style:italic}
+.fcta-sub{
+  font-size:clamp(14px,1.7vw,16.5px);color:var(--cream55);
+  max-width:480px;margin:0 auto 30px;line-height:1.75;
+}
+.mini-cd{
+  display:flex;align-items:center;justify-content:center;gap:4px;margin-bottom:36px;
+}
+.mini-lbl{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream35);margin-right:8px}
+.fcta-btns{
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+}
+@media(min-width:480px){.fcta-btns{flex-direction:row;justify-content:center}}
+.fcta-btns .btn-wa{width:100%}
+@media(min-width:480px){.fcta-btns .btn-wa{width:auto}}
+.fcta-micro{font-family:'Space Mono',monospace;font-size:10px;color:var(--cream35);margin-top:18px;letter-spacing:.03em}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+footer{background:#060606;border-top:1px solid var(--gold-border);padding:50px 0 24px}
+.foot-grid{display:grid;grid-template-columns:1fr;gap:32px;margin-bottom:36px}
+@media(min-width:768px){.foot-grid{grid-template-columns:1.5fr 1fr 1fr}}
+.foot-brand{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--cream);margin-bottom:5px}
+.foot-brand em{font-style:italic;color:var(--gold)}
+.foot-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream35);margin-bottom:14px}
+.foot-desc{font-size:13px;color:var(--cream35);line-height:1.72;max-width:260px}
+.soc-row{display:flex;gap:8px;margin-top:18px}
+.soc-btn{
+  width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--gold-border);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,195,11,0.42);
+  transition:border-color .25s,color .25s,box-shadow .25s;
+}
+.soc-btn:hover{border-color:var(--gold);color:var(--gold);box-shadow:0 0 10px rgba(255,195,11,0.2)}
+.foot-col-h{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);opacity:.62;margin-bottom:15px}
+.foot-links{display:flex;flex-direction:column;gap:9px}
+.foot-links a{font-size:13px;color:var(--cream35);transition:color .2s;width:fit-content}
+.foot-links a:hover{color:var(--gold)}
+.foot-bottom{
+  border-top:1px solid rgba(240,237,230,0.06);padding-top:20px;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;
+}
+.foot-copy{font-family:'Space Mono',monospace;font-size:10px;color:var(--cream35)}
+.foot-built{display:flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:10px;color:var(--cream35)}
+.foot-built .dot{color:var(--gold)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FLOATING WA BUTTON (mobile)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#float-wa{
+  position:fixed;bottom:20px;right:18px;z-index:7000;
+  display:flex;align-items:center;gap:0;
+  background:linear-gradient(135deg,#25d366,#1aad52);
+  border-radius:50px;
+  box-shadow:0 6px 30px rgba(37,211,102,0.5);
+  padding:12px 18px 12px 14px;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:800;
+  color:#fff;letter-spacing:.03em;
+  transition:transform .2s,box-shadow .25s;
+  text-decoration:none;
+}
+#float-wa:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(37,211,102,0.6)}
+#float-wa svg{margin-right:8px;flex-shrink:0}
+@media(min-width:768px){#float-wa{display:none}}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MOBILE FINE-TUNING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media(max-width:375px){
+  .hero-h1{font-size:26px}
+  .cd-n{font-size:11px;min-width:28px;padding:2px 5px}
+  .bar-text{font-size:10.5px}
+  .reel-card{flex:0 0 72vw}
+  .tcard{padding:18px 15px}
+}
+</style>
+</head>
+<body>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  FLOATING WHATSAPP (mobile only)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<a id="float-wa"
+   href="https://wa.me/201159078806?text=Hi%20Dr.%20Ahmed,%20I%20visited%20your%20portfolio%20and%20I'm%20interested%20in%20getting%20premium%20dental%20motion%20animations%20for%20my%20clinic.%20I'd%20like%20to%20know%20more%20about%20the%20process%20and%20pricing."
+   target="_blank" rel="noopener">
+  <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  WhatsApp
+</a>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PROMO BAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div id="bar">
+  <div class="bar-inner">
+    <p class="bar-text">⚡ <b>30% OFF</b> Your First Dental Animation — Limited Slots This Month</p>
+    <div class="cd">
+      <div class="cd-u"><span class="cd-n" id="d">48</span><div class="cd-l">Days</div></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-u"><span class="cd-n" id="h">00</span><div class="cd-l">Hrs</div></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-u"><span class="cd-n" id="m">00</span><div class="cd-l">Min</div></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-u"><span class="cd-n" id="s">00</span><div class="cd-l">Sec</div></div>
+    </div>
+    <a href="#finalcta" class="bar-btn">Claim →</a>
+  </div>
+</div>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  HERO — showreel-first, above fold
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+
+  <div class="container hero-inner">
+
+    <!-- Eyebrow -->
+    <div class="hero-tag reveal">
+      <span></span>Dental Motion Graphics
+    </div>
+
+    <!-- Headline -->
+    <h1 class="hero-h1 reveal" style="transition-delay:.06s">
+      <span class="w">High-Converting Dental Animations<br/>That </span><span class="g">Close More Treatments.</span>
+    </h1>
+
+    <!-- Sub tags -->
+    <div class="hero-subs reveal" style="transition-delay:.11s">
+      <span class="hero-sub-item">Dentally Accurate</span>
+      <span class="hero-sub-dot">•</span>
+      <span class="hero-sub-item">48hr Delivery</span>
+      <span class="hero-sub-dot">•</span>
+      <span class="hero-sub-item">Written by a Dentist</span>
+    </div>
+
+    <!-- 16:9 VIDEO PLAYER — Vimeo 1080p -->
+    <div class="video-wrap reveal" style="transition-delay:.15s">
+      <iframe
+        src="https://player.vimeo.com/video/1197559801?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&quality=1080p"
+        style="position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:8px;z-index:2"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+        loading="eager"
+        title="Showreel 2025">
+      </iframe>
+      <div class="vw-badge" style="pointer-events:none;z-index:3">
+        <div class="vw-badge-dot"></div>
+        <span class="vw-badge-txt">Showreel 2025</span>
+      </div>
+    </div>
+
+    <!-- PRIMARY CTA — WhatsApp -->
+    <div class="reveal" style="transition-delay:.2s;margin-bottom:14px">
+      <a class="btn-wa"
+         href="https://wa.me/201159078806?text=Hi%20Dr.%20Ahmed,%20I%20visited%20your%20portfolio%20and%20I'm%20interested%20in%20getting%20premium%20dental%20motion%20animations%20for%20my%20clinic.%20I'd%20like%20to%20know%20more%20about%20the%20process%20and%20pricing."
+         target="_blank" rel="noopener">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Chat on WhatsApp Now
+      </a>
+    </div>
+
+    <!-- Metrics -->
+    <div class="hero-metrics reveal" style="transition-delay:.25s">
+      <div class="hmetric">
+        <div class="hmetric-n">500+</div>
+        <div class="hmetric-l">Videos Made</div>
+      </div>
+      <div class="hmetric">
+        <div class="hmetric-n">50+</div>
+        <div class="hmetric-l">Clinics Globally</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TRUSTED BY — Doctors Row
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div id="trusted-by">
+  <div class="tb-glow"></div>
+  <div class="tb-inner">
+    <p class="tb-label">Trusted By</p>
+    <div class="tb-avatars">
+
+      <div class="tb-av">
+        <div class="tb-circle">
+          <img src="d1.png" alt="Doctor 1" onerror="this.style.display='none'"/>
+        </div>
+        <div class="tb-flag">🇪🇬</div>
+      </div>
+
+      <div class="tb-av">
+        <div class="tb-circle">
+          <img src="d2.png" alt="Doctor 2" onerror="this.style.display='none'"/>
+        </div>
+        <div class="tb-flag">🇸🇦</div>
+      </div>
+
+      <div class="tb-av featured">
+        <div class="tb-circle">
+          <img src="d3.png" alt="Doctor 3" onerror="this.style.display='none'"/>
+        </div>
+        <div class="tb-flag">🇦🇪</div>
+      </div>
+
+      <div class="tb-av">
+        <div class="tb-circle">
+          <img src="d4.png" alt="Doctor 4" onerror="this.style.display='none'"/>
+        </div>
+        <div class="tb-flag">🇮🇹</div>
+      </div>
+
+      <div class="tb-av">
+        <div class="tb-circle">
+          <img src="d5.png" alt="Doctor 5" onerror="this.style.display='none'"/>
+        </div>
+        <div class="tb-flag">🇺🇸</div>
+      </div>
+
+      <div class="tb-av">
+        <div class="tb-circle">
+          <img src="d6.png" alt="Doctor 6" onerror="this.style.display='none'"/>
+        </div>
+        <div class="tb-flag">🇬🇧</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  FLAG ROW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div id="flags">
+  <div class="flags-scroll">
+    <span class="flag-tag"><span class="f">🇪🇬</span> Egypt</span>
+    <span class="flag-tag"><span class="f">🇹🇷</span> Turkey</span>
+    <span class="flag-tag"><span class="f">🇸🇦</span> GCC &amp; MENA</span>
+    <span class="flag-tag"><span class="f">🇮🇹</span> Italy</span>
+    <span class="flag-tag"><span class="f">🇲🇽</span> Mexico</span>
+    <span class="flag-tag"><span class="f">🇺🇸</span> USA</span>
+    <span class="flag-tag"><span class="f">🇧🇷</span> Brazil</span>
+    <span class="flag-tag"><span class="f">🇪🇸</span> Spain</span>
+  </div>
+</div>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  WHY A DENTIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="doctor">
+  <div class="doc-glow"></div>
+  <div class="container">
+    <div class="doc-grid">
+
+      <!-- Circle avatar -->
+      <div class="circle-outer reveal">
+        <div class="circle-r2"></div>
+        <div class="circle-r1"></div>
+        <div class="circle-av">
+          <img src="me.png" alt="Dr. Ahmed" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/>
+          <div class="circle-nameplate">
+            <div class="circle-name">Dr. Ahmed</div>
+            <div class="circle-role">Dentist · Motion Director</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right copy -->
+      <div class="reveal" style="transition-delay:.1s">
+        <div class="eyebrow">Doctor to Doctor</div>
+        <h2 class="doc-h2">Why Work With<br/>a <span class="g">Dentist</span>?</h2>
+        <div class="doc-divider"></div>
+        <p class="doc-p">
+          I am <strong>Dr. Ahmed</strong> — a practicing dentist who understands clinical cases deeply.
+          You don't have to spend hours explaining anatomy, procedures, or patient psychology to me.
+          <em>I already speak your language.</em>
+        </p>
+        <p class="doc-p">
+          Every frame is built with <strong>dental accuracy</strong>. Every second of animation is
+          engineered to reduce patient fear, increase treatment acceptance, and make your clinic
+          look like the premium practice it truly is.
+        </p>
+        <div class="doc-feats">
+          <div class="dfeat">
+            <div class="dfeat-icon">✓</div>
+            <div>
+              <div class="dfeat-title">Zero Dental Errors</div>
+              <div class="dfeat-sub">Anatomically verified</div>
+            </div>
+          </div>
+          <div class="dfeat">
+            <div class="dfeat-icon">✓</div>
+            <div>
+              <div class="dfeat-title">Dental Script Included</div>
+              <div class="dfeat-sub">Written in dental language</div>
+            </div>
+          </div>
+          <div class="dfeat">
+            <div class="dfeat-icon">✓</div>
+            <div>
+              <div class="dfeat-title">48hr Turnaround</div>
+              <div class="dfeat-sub">2–4 business days</div>
+            </div>
+          </div>
+          <div class="dfeat">
+            <div class="dfeat-icon">✓</div>
+            <div>
+              <div class="dfeat-title">Global Clients</div>
+              <div class="dfeat-sub">8+ countries served</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PORTFOLIO — 9:16 reels
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="portfolio">
+  <div class="port-bg-word">Reels</div>
+  <div class="container">
+
+    <div class="port-header reveal">
+      <h2 class="port-h2">Our Work <span class="g">Speaks</span><br/>Volumes</h2>
+      <a href="https://wa.me/201159078806?text=Hi%20Dr.%20Ahmed,%20I%20visited%20your%20portfolio%20and%20I'm%20interested%20in%20getting%20premium%20dental%20motion%20animations%20for%20my%20clinic.%20I'd%20like%20to%20know%20more%20about%20the%20process%20and%20pricing." target="_blank" class="port-more">See Full Portfolio →</a>
+    </div>
+
+    <!-- Views badge -->
+    <div class="views-badge reveal" style="transition-delay:.06s">
+      <span class="vb-icon">👁</span>
+      <div class="vb-txt">
+        <span style="color:var(--gold);font-weight:800">Over 1,000,000+ Views</span>
+        <span> Generated Across Dental Social Media</span>
+      </div>
+    </div>
+
+    <!-- Reel cards -->
+    <div class="reel-row-wrap reveal" style="transition-delay:.1s">
+      <button class="reel-arrow left" onclick="scrollReels(-1)" aria-label="Previous">‹</button>
+      <button class="reel-arrow right" onclick="scrollReels(1)" aria-label="Next">›</button>
+
+      <div class="reel-row" id="reelRow">
+
+        <!-- Reel 1 — Implant -->
+        <div class="reel-card">
+          <iframe
+            src="https://player.vimeo.com/video/1197559866?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+            style="position:absolute;inset:0;width:100%;height:100%;border:none;z-index:1"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
+            loading="lazy" title="Implant Reel">
+          </iframe>
+          <div class="rc-overlay" style="background:linear-gradient(to top,rgba(10,10,10,0.9) 0%,transparent 35%);z-index:2;pointer-events:none"></div>
+          <div class="rc-info">
+            <div class="rc-tag">Implantology</div>
+            <div class="rc-title">Premium 3D Dental Implant Placement</div>
+            <div class="rc-sub">Boosting case acceptance for high-ticket implant surgeries</div>
+            <div class="rc-dur">3D Reel · 15–20 sec</div>
+          </div>
+        </div>
+
+        <!-- Reel 2 — Veneers -->
+        <div class="reel-card">
+          <iframe
+            src="https://player.vimeo.com/video/1197559781?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+            style="position:absolute;inset:0;width:100%;height:100%;border:none;z-index:1"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
+            loading="lazy" title="Veneers Reel">
+          </iframe>
+          <div class="rc-overlay" style="background:linear-gradient(to top,rgba(10,10,10,0.9) 0%,transparent 35%);z-index:2;pointer-events:none"></div>
+          <div class="rc-info">
+            <div class="rc-tag">Aesthetics</div>
+            <div class="rc-title">Porcelain Veneers Aesthetic Transformation</div>
+            <div class="rc-sub">Cinematic smile design that drives cosmetic inquiries</div>
+            <div class="rc-dur">Cinematic Reel · 15–20 sec</div>
+          </div>
+        </div>
+
+        <!-- Reel 3 — Full Rehab -->
+        <div class="reel-card">
+          <iframe
+            src="https://player.vimeo.com/video/1197559857?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+            style="position:absolute;inset:0;width:100%;height:100%;border:none;z-index:1"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
+            loading="lazy" title="Full Rehab Reel">
+          </iframe>
+          <div class="rc-overlay" style="background:linear-gradient(to top,rgba(10,10,10,0.9) 0%,transparent 35%);z-index:2;pointer-events:none"></div>
+          <div class="rc-info">
+            <div class="rc-tag">Full Rehab</div>
+            <div class="rc-title">Full Mouth Rehabilitation &amp; Bite Correction</div>
+            <div class="rc-sub">Explaining complex full-arch cases simply for patients</div>
+            <div class="rc-dur">Educational Reel · 15–20 sec</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <p class="swipe-hint">← Swipe to explore →</p>
+
+  </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TESTIMONIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="testimonials">
+  <div class="testi-glow"></div>
+  <div class="container">
+
+    <div class="eyebrow reveal">Client Results</div>
+    <h2 class="testi-h2 reveal" style="transition-delay:.06s">What <span class="g">Doctors</span> Say</h2>
+    <p class="testi-sub reveal" style="transition-delay:.1s">Real outcomes. Real clinics. Unfiltered.</p>
+
+    <div class="testi-grid">
+
+      <div class="tcard reveal" style="transition-delay:.05s">
+        <div class="tcard-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <div class="tcard-quote">
+          Honestly, Dr. Ahmed's animations are the best investment I've made for my clinic.
+          Showing the 3D implant and veneer step-by-step to patients completely removes their fear.
+          Our case acceptance rate for premium treatments
+          <strong style="color:var(--gold)">skyrocketed</strong> because patients finally <em style="color:var(--cream)">get it.</em>
+        </div>
+        <div class="tcard-author">
+          <div class="tcard-av">L</div>
+          <div>
+            <div class="tcard-name">Dr. Layla M.</div>
+            <div class="tcard-role">Implantologist · Dubai, UAE</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard reveal" style="transition-delay:.1s">
+        <div class="tcard-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <div class="tcard-quote">
+          Once you start using Dr. Ahmed's dental reels, you become addicted.
+          It makes the clinic look incredibly high-end. Patients share the videos, and it
+          <strong style="color:var(--gold)">does the selling for us</strong> before they even sit on the chair.
+        </div>
+        <div class="tcard-author">
+          <div class="tcard-av">K</div>
+          <div>
+            <div class="tcard-name">Dr. Karim R.</div>
+            <div class="tcard-role">Cosmetic Dentist · Cairo, Egypt</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard reveal" style="transition-delay:.15s">
+        <div class="tcard-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <div class="tcard-quote">
+          As a specialist, I usually hate dental videos online because they lack accurate anatomy.
+          Dr. Ahmed designs these <strong style="color:var(--gold)">doctor-to-doctor</strong> — the margin of error is zero,
+          the aesthetic is flawless, and it perfectly reflects clinical reality.
+        </div>
+        <div class="tcard-author">
+          <div class="tcard-av">M</div>
+          <div>
+            <div class="tcard-name">Dr. Marco V.</div>
+            <div class="tcard-role">Oral Surgeon · Milan, Italy</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  FAQ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-layout">
+
+      <div class="reveal">
+        <div class="eyebrow">FAQ</div>
+        <h2 class="faq-lh">Got <span class="g">Questions?</span></h2>
+        <p class="faq-lsub">Everything you need before commissioning your first dental animation.</p>
+        <div class="faq-lcta">
+          <a href="https://wa.me/201159078806?text=Hi%20Dr.%20Ahmed,%20I%20visited%20your%20portfolio%20and%20I'm%20interested%20in%20getting%20premium%20dental%20motion%20animations%20for%20my%20clinic.%20I'd%20like%20to%20know%20more%20about%20the%20process%20and%20pricing."
+             target="_blank" class="btn-wa" style="font-size:13px;padding:13px 22px">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Ask on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="faq-list reveal" style="transition-delay:.1s">
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <div class="fq-in"><span class="fq-num">01</span><span class="fq-txt">How long does a dental animation take?</span></div>
+            <span class="fq-icon">+</span>
+          </div>
+          <div class="faq-a"><p>Usually <strong>2–4 business days</strong> depending on complexity. Simple explainer reels are often ready in 48 hours. Multi-scene 3D procedures may take up to 4 days.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <div class="fq-in"><span class="fq-num">02</span><span class="fq-txt">Do you write the dental script?</span></div>
+            <span class="fq-icon">+</span>
+          </div>
+          <div class="faq-a"><p>Yes — as a practicing dentist, I write every script to be <strong>clinically flawless and psychologically persuasive to patients</strong>. It's dentally accurate, patient-friendly, and available in both Arabic and English at no extra cost.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <div class="fq-in"><span class="fq-num">03</span><span class="fq-txt">What if I need revisions?</span></div>
+            <span class="fq-icon">+</span>
+          </div>
+          <div class="faq-a"><p>Every project includes <strong>2 free revision rounds</strong>. Because I understand dental context, most clients approve on first delivery with zero changes needed.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <div class="fq-in"><span class="fq-num">04</span><span class="fq-txt">Do you offer white-label for agencies?</span></div>
+            <span class="fq-icon">+</span>
+          </div>
+          <div class="faq-a"><p>Yes. I work as a <strong>silent production partner</strong> for dental marketing agencies worldwide — your brand, your client, I handle the animation behind the scenes.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <div class="fq-in"><span class="fq-num">05</span><span class="fq-txt">What format will I receive?</span></div>
+            <span class="fq-icon">+</span>
+          </div>
+          <div class="faq-a"><p>HD MP4 in <strong>9:16 (Reels/Shorts)</strong> and 16:9 formats — optimized for Instagram, TikTok, clinic screens, and patient consultations, with and without voiceover on request.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  FINAL CTA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="finalcta">
+  <div class="fcta-glow"></div>
+  <div class="fcta-word">30% OFF</div>
+  <div class="container">
+    <div class="fcta-inner">
+
+      <div class="fcta-badge reveal">
+        <div class="fcta-dot"></div>
+        <span class="fcta-badge-txt">Offer Expires Soon</span>
+      </div>
+
+      <h2 class="fcta-h2 reveal" style="transition-delay:.08s">
+        Claim Your<br/><span class="g">30% Discount</span><br/>Before It Expires
+      </h2>
+
+      <p class="fcta-sub reveal" style="transition-delay:.14s">
+        Limited slots available this month. Start with a free WhatsApp consultation — no obligation, no credit card.
+      </p>
+
+      <div class="mini-cd reveal" style="transition-delay:.18s">
+        <span class="mini-lbl">Expires in</span>
+        <div class="cd-u"><span class="cd-n" id="d2">48</span><div class="cd-l">Days</div></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-u"><span class="cd-n" id="h2">00</span><div class="cd-l">Hrs</div></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-u"><span class="cd-n" id="m2">00</span><div class="cd-l">Min</div></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-u"><span class="cd-n" id="s2">00</span><div class="cd-l">Sec</div></div>
+      </div>
+
+      <div class="fcta-btns reveal" style="transition-delay:.22s">
+        <a href="https://wa.me/201159078806?text=Hi%20Dr.%20Ahmed,%20I%20visited%20your%20portfolio%20and%20I'm%20interested%20in%20getting%20premium%20dental%20motion%20animations%20for%20my%20clinic.%20I'd%20like%20to%20know%20more%20about%20the%20process%20and%20pricing."
+           target="_blank" class="btn-wa" style="font-size:15px;padding:18px 36px">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Chat on WhatsApp Now
+        </a>
+      </div>
+
+      <p class="fcta-micro reveal" style="transition-delay:.26s">
+        No credit card · Free strategy consultation · No commitment
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+
+      <div>
+        <div class="foot-brand">Dr. <em>Ahmed</em></div>
+        <div class="foot-tag">Dental Motion Graphics</div>
+        <p class="foot-desc">Premium dental animations crafted by a dentist mind. Dentally accurate. Visually stunning. Built to close more treatments.</p>
+        <div class="soc-row">
+          <a href="#" class="soc-btn" aria-label="Instagram">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="soc-btn" aria-label="TikTok">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+          <a href="https://wa.me/201159078806?text=Hi%20Dr.%20Ahmed,%20I%20visited%20your%20portfolio%20and%20I'm%20interested%20in%20getting%20premium%20dental%20motion%20animations%20for%20my%20clinic.%20I'd%20like%20to%20know%20more%20about%20the%20process%20and%20pricing." target="_blank" class="soc-btn" aria-label="WhatsApp">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+          <a href="#" class="soc-btn" aria-label="YouTube">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="foot-col-h">Services</div>
+        <div class="foot-links">
+          <a href="#">3D Implant Animations</a>
+          <a href="#">Clear Aligner Reels</a>
+          <a href="#">Veneer Presentations</a>
+          <a href="#">Full Rehab Animations</a>
+          <a href="#">White-Label Production</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="foot-col-h">Quick Links</div>
+        <div class="foot-links">
+          <a href="#doctor">About Dr. Ahmed</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#testimonials">Reviews</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://wa.me/201159078806?text=Hi%20Dr.%20Ahmed,%20I%20visited%20your%20portfolio%20and%20I'm%20interested%20in%20getting%20premium%20dental%20motion%20animations%20for%20my%20clinic.%20I'd%20like%20to%20know%20more%20about%20the%20process%20and%20pricing." target="_blank">Chat on WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="foot-bottom">
+      <p class="foot-copy">© 2026 Dr. Ahmed. All rights reserved.</p>
+      <div class="foot-built"><span class="dot">✦</span> Built for Dentists · By a Dentist</div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  JAVASCRIPT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<script>
+/* ── COUNTDOWN ── */
+(function(){
+  const KEY='ahmed_final_end';
+  let end=localStorage.getItem(KEY);
+  if(!end){end=Date.now()+48*3600*1000;localStorage.setItem(KEY,end);}
+  else end=parseInt(end);
+  function p(n){return String(n).padStart(2,'0')}
+  function tick(){
+    const diff=Math.max(0,end-Date.now());
+    const ts=Math.floor(diff/1000);
+    const vals=[
+      p(Math.floor(ts/86400)),
+      p(Math.floor((ts%86400)/3600)),
+      p(Math.floor((ts%3600)/60)),
+      p(ts%60)
+    ];
+    ['d','h','m','s'].forEach((id,i)=>{
+      [document.getElementById(id),document.getElementById(id+'2')].forEach(el=>{
+        if(el)el.textContent=vals[i];
+      });
+    });
+    if(diff>0)setTimeout(tick,1000);
+  }
+  tick();
+})();
+
+/* ── FAQ ── */
+function toggleFaq(qEl){
+  const item=qEl.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+
+/* ── REEL SCROLL ARROWS ── */
+function scrollReels(dir){
+  const row=document.getElementById('reelRow');
+  if(!row)return;
+  const cardW=row.querySelector('.reel-card')?.offsetWidth||220;
+  row.scrollBy({left:dir*(cardW+14),behavior:'smooth'});
+}
+
+/* ── SCROLL REVEAL ── */
+(function(){
+  const els=document.querySelectorAll('.reveal');
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}
+    });
+  },{threshold:.06,rootMargin:'0px 0px -16px 0px'});
+  els.forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');
+    else io.observe(el);
+  });
+})();
+
+
+</script>
+
+</body>
+</html>
